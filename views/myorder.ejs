@@ -1,0 +1,57 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5 p-5">
+	<h1>All orders</h1>
+	<div class="row text-center" style="display:flex;flex-wrap:wrap;">
+	<% orders.forEach(function(order){ %>
+		<!-- <div class="col-md-3 col-sm-6">
+			<div class="thumbnail">
+				<div class="caption">
+					<h4><%= order.fname %></h4>
+				</div>
+				
+			</div>
+		</div> -->
+		<div class="col-lg-4 col-md-12">
+			<div class="card shadow-lg p-3">
+				<table>
+					<tr>
+						<td colspan="2"><h3>Status: <%= order.status %></td>
+					</tr>
+					<tr>
+						<td>Name:</td>
+						<td><%= order.fname %> <%= order.lname %></td>
+					</tr>
+					<tr>
+						<td>Email:</td>
+						<td><%= order.email %></td>
+					</tr>
+					<tr>
+						<td>Phone:</td>
+						<td><%= order.phone %></td>
+					</tr>
+					<tr>
+						<td>Laundry:</td>
+						<td><%= order.laundry %></td>
+					</tr>
+					<tr>
+						<td>Dry Clean:</td>
+						<td><%= order.dryclean %></td>
+					</tr>
+					<tr>
+						<td>Iron:</td>
+						<td><%= order.iron %></td>
+					</tr>
+					<tr>
+						<td>Address:</td>
+						<td><%= order.address %></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	<% }); %>
+</div>
+</div>
+
+
+<%- include('partials/footer') %>

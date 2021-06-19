@@ -1,0 +1,100 @@
+<%- include('partials/header') %>
+
+<br><br><br>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-md-12">
+			<h4>Order Details</h4>
+			<form action="/order" method="POST" autocomplete="on">
+				<div class="form-group">
+					<label>Laundry</label>
+					<select class="form-control" name="laundry">
+						<option>0</option>
+						<option>1 kg</option>
+						<option>2 kg</option>
+						<option>3 kg</option>
+						<option>4 kg</option>
+						<option>5 kg</option>
+						<option>6 kg</option>
+						<option>7 kg</option>
+						<option>8 kg</option>
+						<option>9 kg</option>
+						<option>10 kg</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label>Dry Clean(Select piece)</label>
+					<select class="form-control" name="dryclean">
+						<option>0</option>
+						<option>2</option>
+						<option>4</option>
+						<option>6</option>
+						<option>8</option>
+						<option>10</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label>Ironing for all washing clothes:</label>
+					<input type="radio" name="iron" value="1" required>
+					<label>Yes</label>
+					<input type="radio" name="iron" value="0" required>
+					<label>No</label>
+				</div>
+				<br>
+				<h4>Personal Detail</h4>
+				<div class="form-group">
+					<label>First Name</label>
+					<input class="form-control" type="text" name="fname" placeholder="First Name" value="<%= currentUser.firstName %>" required>
+				</div>
+				<div class="form-group">
+					<label>Last Name</label>
+					<input class="form-control" type="text" name="lname" placeholder="Last Name" value="<%= currentUser.lastName %>" required>
+				</div>
+				<div class="form-group">
+					<label>Email</label>
+					<input class="form-control" type="email" name="email" placeholder="Email" value="<%= currentUser.email %>" required>
+				</div>
+				<div class="form-group">
+					<label>Phone</label>
+					<input class="form-control" type="number" name="phone" placeholder="Phone" value="<%= currentUser.phone %>" required>
+				</div>
+				<div class="form-group">
+					<label>Address</label>
+					<textarea class="form-control" placeholder="Address" name="address" required></textarea>
+				</div>
+				<div class="text-center">
+					<button class="btn btn-outline-primary">Submit</button>
+				</div>
+			</form>
+		</div>
+		<!-- <div class="col-lg-4 col-md-12 mt-4">
+			<div class="card shadow-lg">
+				<h3 class="text-center">Your Cart</h3>
+				<div class="card-body">
+					
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16"></svg>
+							<span class="font-weight-bold">Laundry: </span> <span>0</span> X 80 = <span id="qty1">tot</span>
+						</li>
+						<li class="list-group-item">
+							<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16"></svg>
+							<span class="font-weight-bold">Dry Cleaning: </span><span class="">0</span> x 80 = <span id="qty2">tot</span>
+						</li>
+						<li class="list-group-item">
+							<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16"></svg>
+							<span class="font-weight-bold">Ironing: </span><span class="text-right">0</span> x 80 = <span id="qty3">tot</span>
+						</li>
+						<li class="list-group-item text-primary font-weight-bold">
+							<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16"></svg>
+							Total = <span id="tot">tot</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div> -->
+	</div>
+	<br><br>
+</div>
+
+
+<%- include('partials/footer') %>
